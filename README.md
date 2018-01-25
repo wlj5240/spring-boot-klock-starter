@@ -16,10 +16,10 @@
         </dependency>
 ```
 
-1. application.properties配置redis链接：spring.klock.address=127.0.0.1:6379
+2. application.properties配置redis链接：spring.klock.address=127.0.0.1:6379
 
 
-1. 在需要加分布式锁的方法上，添加注解@Klock，如：
+3. 在需要加分布式锁的方法上，添加注解@Klock，如：
 ```
 @Service
 public class TestService {
@@ -34,8 +34,10 @@ public class TestService {
 }
 
 ```
-1. 支持锁指定的业务key，如同一个方法ID入参相同的加锁，其他的放行。业务key的获取支持Spel，具体使用方式如下
+4. 支持锁指定的业务key，如同一个方法ID入参相同的加锁，其他的放行。业务key的获取支持Spel，具体使用方式如下
 ![输入图片说明](https://gitee.com/uploads/images/2018/0125/100452_e5d61dc8_492218.png "屏幕截图.png")
+
+
 
 > spring mvc项目接入
 
@@ -43,6 +45,8 @@ public class TestService {
 ```
 <context:component-scan base-package="org.springframework.boot.autoconfigure.klock.KlockAutoConfiguration"/>
 ```
+
+
 
 # 使用参数说明
 
